@@ -9,7 +9,7 @@ import com.mba.security.helper.SecurityManager;
 public class SecurityCheckAdvice implements MethodBeforeAdvice {
 
 	@Override
-	public void before(Method method, Object[] args, Object proxy) throws Throwable {
+	public void before(Method method, Object[] args, Object proxy) throws IllegalAccessException {
 		SecurityManager securityManager = SecurityManager.getInstance();
 		boolean ststus = securityManager.authenticate();
 		if (ststus==false) {
